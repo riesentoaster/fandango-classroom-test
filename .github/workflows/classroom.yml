@@ -19,7 +19,7 @@ jobs:
       with:
         timeout: 10
         max-score: 10
-        setup-command: 'pip install -e .'
+        setup-command: 'apt install build-essential && pip install -e .'
     - name: Setup Secret Test
       id: setup-secret-test
       run: |
