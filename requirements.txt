@@ -1,3 +1,2 @@
 fandango-fuzzer>=1.0.6
 pytest>=8.4.2
-pytest-ruff>=0.5
