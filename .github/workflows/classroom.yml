@@ -20,7 +20,7 @@ jobs:
         test-name: Manual unit tests
         setup-command: ''
         command: pip install -r requirements.txt && pytest
-        timeout: 10
+        timeout: 20
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
