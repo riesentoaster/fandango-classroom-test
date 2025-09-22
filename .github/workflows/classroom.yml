@@ -30,7 +30,7 @@ jobs:
       with:
         timeout: 10
         max-score: 10
-        setup-command: 'source .venv/bin/activate'
+        setup-command: '. .venv/bin/activate'
     - name: Setup Secret Test
       id: setup-secret-test
       run: |
@@ -42,7 +42,7 @@ jobs:
       with:
         timeout: 10
         max-score: 10
-        setup-command: 'source .venv/bin/activate'
+        setup-command: '. .venv/bin/activate'
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
