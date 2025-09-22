@@ -32,7 +32,7 @@ jobs:
     - name: Setup Secret Test
       id: setup-secret-test
       run: |
-        rm tests/*
+        rm -r tests/*
         echo ${{ secrets.HIDDEN_TEST }} > tests/test_secret.py
     - name: Secret unit tests
       id: secret-unit-tests
