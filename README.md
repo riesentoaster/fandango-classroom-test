@@ -2,8 +2,7 @@
 
 ## Installation
 1. `python3 -m venv .venv && source .venv/bin/activate`
-2. `pip install -e .`
-3. `fandango_classroom_test --fan-file nested.fan`
+2. `pip install -r requirements.txt`
 
 ## Tasks
 
