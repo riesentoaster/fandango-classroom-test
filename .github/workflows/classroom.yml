@@ -13,15 +13,17 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Unit Tests
-      id: unit-tests
-      uses: classroom-resources/autograding-python-grader@v1
+    - name: Manual unit tests
+      id: manual-unit-tests
+      uses: classroom-resources/autograding-command-grader@v1
       with:
-        setup-command: 'pip install fandango-fuzzer'
+        test-name: Manual unit tests
+        setup-command: ''
+        command: pip install -r requirements.txt && pytest
         timeout: 10
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        UNIT-TESTS_RESULTS: "${{steps.unit-tests.outputs.result}}"
+        MANUAL-UNIT-TESTS_RESULTS: "${{steps.manual-unit-tests.outputs.result}}"
       with:
-        runners: unit-tests
+        runners: manual-unit-tests
