@@ -2,8 +2,4 @@
 __pycache__
 .pytest_cache
 .ruff_cache
-<<<<<<< HEAD
 *.egg-info
-=======
-*.egg-info
->>>>>>> e73d943 (Add unit tests)
