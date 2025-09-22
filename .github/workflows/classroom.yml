@@ -17,8 +17,8 @@ jobs:
       id: unit-tests
       uses: classroom-resources/autograding-python-grader@v1
       with:
-        timeout: 10
         setup-command: 'pip install fandango-fuzzer'
+        timeout: 10
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
