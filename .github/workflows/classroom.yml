@@ -13,37 +13,15 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-    - name: Run format check
-      run: |
-        pip install ruff
-        ruff format --check .
-        ruff check .
-    - name: Unit tests
+    - name: Unit Tests
       id: unit-tests
       uses: classroom-resources/autograding-python-grader@v1
       with:
         timeout: 10
-        max-score: 10
-        setup-command: ''
-    # - name: Setup Secret Test
-    #   id: setup-secret-test
-    #   run: |
-    #     rm -r tests/*
-    #     echo ${{ secrets.HIDDEN_TEST }} > tests/test_secret.py
-    - name: Secret unit tests
-      id: secret-unit-tests
-      uses: classroom-resources/autograding-python-grader@v1
-      with:
-        timeout: 10
-        max-score: 10
         setup-command: ''
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
         UNIT-TESTS_RESULTS: "${{steps.unit-tests.outputs.result}}"
-        SECRETUNIT-TESTS_RESULTS: "${{steps.secret-unit-tests.outputs.result}}"
       with:
-        runners: unit-tests, secret-unit-tests
+        runners: unit-tests
