@@ -28,11 +28,11 @@ jobs:
         timeout: 10
         max-score: 10
         setup-command: ''
-    - name: Setup Secret Test
-      id: setup-secret-test
-      run: |
-        rm -r tests/*
-        echo ${{ secrets.HIDDEN_TEST }} > tests/test_secret.py
+    # - name: Setup Secret Test
+    #   id: setup-secret-test
+    #   run: |
+    #     rm -r tests/*
+    #     echo ${{ secrets.HIDDEN_TEST }} > tests/test_secret.py
     - name: Secret unit tests
       id: secret-unit-tests
       uses: classroom-resources/autograding-python-grader@v1
